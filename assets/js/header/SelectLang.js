@@ -25,7 +25,7 @@ class LanguageSelector {
         const desktopSelectContainer = document.querySelector('.desktop-select-language');
 
         if (!mobileSelectContainer || !desktopSelectContainer) {
-            console.error('Elemento .mobile-select-language ou .desktop-select-language não encontrado no DOM.');
+            console.error('.mobile-select-language or .desktop-select-language element not found in DOM.');
             return;
         }
 
