@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<!-- CREATED BY KAUAN VIDIGAL- GITHUB Vidigal-code (https://github.com/Vidigal-code) -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description"
+          content="AVANTI E-commerce: Sua loja online moderna e eficiente para compras inteligentes."/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+          crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/page-all-styles.css"/>
+    <link rel="icon" href="/assets/image/avanti-logo.svg" type="image/svg+xml"/>
+    <title>AVANTI E-commerce</title>
+</head>
+
+<body>
+
+
+<header class="header-container">
+
+    <div class="stripe">
+        <p data-translate="discountMessage">
+            Ganhe
+        </p>
+        <span class="stripe-price" data-translate="discountMessageValue">
+             R$10,00
+        </span>
+        <p data-translate="discountMessageFinal">
+            de desconto no seu primeiro pedido.
+        </p>
+        <p data-translate="couponMessage">Utilize o cupom DESCONTO10</p>
+    </div>
+
+
+    <div class="header-content">
+        <img
+                src="/assets/image/logo.png"
+                alt="Image Logo"
+                class="logo-image"
+                id="header-logo"
+        />
+        <div class="search-input-container-wrapper" id="search-container">
+            <div class="search-bar-container">
+                <input
+                        type="text"
+                        placeholder="Digite aqui o que você procura"
+                        class="search-input-field"
+                        id="search-message-input"
+                        autocomplete="off"
+                />
+                <i
+                        class="bi bi-search search-icon"
+                        id="search-icon"
+                        style="cursor: pointer;"
+                ></i>
+            </div>
+
+            <div id="search-feedback-message"></div>
+
+            <div id="search-popup" class="search-popup">
+                <div class="popup-header">
+                    <span id="close-button" class="close-button">&times;</span>
+                </div>
+                <p id="popup-feedback-message" class="search-result-text"></p>
+                <div class="popup-buttons">
+                    <button id="history-button">Lista de Busca</button>
+                    <button id="clear-button">Limpar</button>
+                </div>
+                <ul id="search-history-list" class="clean-list"></ul>
+            </div>
+        </div>
+        <div class="user-info-icons" id="user-section">
+            <button id="mobile-menu-toggle">
+                <i class="bi bi-list user-avatar-icon mobile"></i>
+            </button>
+            <i class="bi bi-person user-avatar-icon" id="user-icon"></i>
+            <p class="user-greeting" id="user-greeting">
+                Olá, <br/>
+                nome cliente!
+            </p>
+            <div class="cart-notification-wrapper" id="cart-section">
+                <p class="notification-badge" id="cart-count">2</p>
+                <i class="bi bi-cart cart-icon" id="cart-icon"></i>
+            </div>
+            <!--
+               <div class="desktop-select-language"></div>
+
+-->
+        </div>
+        <div class="navbar-all-menu-content" id="main-menu">
+            <nav class="navbar" id="main-navbar">
+                <ul class="nav-ul-list" id="main-nav-list">
+                    <li class="bar-item-li" id="bar-item-0" style="font-weight: bold"
+                        onmouseover="MenuOpen('bar-item-0')">
+                        <i class="bi bi-list icon-categories"></i>
+                        <span id="all-categories-text">Todas as categorias</span>
+                    </li>
+                    <li class="bar-item-li" id="bar-item-1" onmouseover="MenuOpen('bar-item-1')">
+                        <span class="department-text">Departamento</span>
+                    </li>
+                    <li class="bar-item-li" id="bar-item-2" onmouseover="MenuListClose()">
+                        <span class="department-text">Departamento</span>
+                    </li>
+                    <li class="bar-item-li" id="bar-item-3" onmouseover="MenuListClose()">
+                        <span class="department-text">Departamento</span>
+                    </li>
+                    <li class="bar-item-li" id="bar-item-4" onmouseover="MenuListClose()">
+                        <span class="department-text">Departamento</span>
+                    </li>
+                    <li class="bar-item-li" id="bar-item-5" onmouseover="MenuListClose()">
+                        <span class="department-text">Departamento</span>
+                    </li>
+                    <li class="bar-item-li" id="bar-item-6" onmouseover="MenuListClose()">
+                        <span class="department-text">Departamento</span>
+                    </li>
+                    <li class="bar-item-li" id="bar-item-7" onmouseover="MenuListClose()">
+                        <span class="department-text">Departamento</span>
+                    </li>
+                    <li class="bar-item-li" id="bar-item-8" onmouseover="MenuListClose()">
+                        <span class="department-text">Departamento</span>
+                    </li>
+                </ul>
+            </nav>
+            <div
+                    class="navbar-menu-container"
+                    onmouseleave="MenuListClose()"
+                    id="navbar-menu-container"
+            >
+                <div class="navbar-menu-content" id="menu-content">
+                    <div class="dropdown-container-menu" id="departament-container">
+                        <ul id="dropdown-content-menu"></ul>
+                    </div>
+                    <div class="categories-container-menu" id="categories-menu">
+                        <h4 id="title-categories" class="title-categories">Departamento</h4>
+                        <div class="categories-wrapper-menu" id="categories-wrapper">
+                            <ul
+                                    class="categories-menu-items"
+                                    id="categories-menu-content-one"
+                            ></ul>
+                            <ul
+                                    class="categories-menu-items"
+                                    id="categories-menu-content-two"
+                            ></ul>
+                            <ul
+                                    class="categories-menu-items"
+                                    id="categories-menu-content-three"
+                            ></ul>
+                        </div>
+                    </div>
+                    <div class="content-menu-image" id="menu-promo-section">
+                        <img
+                                style="background: url('/assets/image/header/image-content.png') no-repeat center center;"
+                                src="/assets/image/header/menu-image.png"
+                                alt="image-menu"
+                                class="image-menu"
+                                id="menu-promo-image"
+                        />
+                        <div class="image-container-menu" id="promo-text-container">
+                            <p id="promo-text">
+                                Confira os Produtos <br/>
+                                <b id="promo-highlight">
+                                    Que acabaram <br/>
+                                    De Chegar!</b>
+                            </p>
+                            <button type="button" class="info-button-menu" id="view-all-button">Ver todos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-menu-container" id="mobile-menu">
+        <div class="mobile-menu-header" id="mobile-menu-header">
+            <h3 class="mobile-menu-title"></h3>
+            <img
+                    src="/assets/image/logo.png"
+                    alt="Image Logo"
+                    class="logo-image"
+            />
+            <i class="bi bi-x-lg mobile-menu-close" id="mobile-menu-toggle-close"></i>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="mobile-search-input-container-wrapper" id="mobile-search-container">
+                <div class="mobile-search-bar-container">
+                    <input
+                            type="text"
+                            placeholder="Digite aqui o que você procura"
+                            class="mobile-search-input-field"
+                            id="mobile-search-message-input"
+                            autocomplete="off"
+                    />
+                    <i
+                            class="bi bi-search mobile-search-icon"
+                            id="mobile-search-icon"
+                            style="cursor: pointer;"
+                    ></i>
+                </div>
+
+                <div id="mobile-search-feedback-message"></div>
+
+                <div id="mobile-search-popup" class="mobile-search-popup">
+                    <div class="popup-header">
+                        <span id="mobile-close-button" class="close-button">&times;</span>
+                    </div>
+                    <p id="mobile-popup-feedback-message" class="mobile-search-result-text"></p>
+                    <div class="popup-buttons">
+                        <button id="mobile-history-button">Lista de Busca</button>
+                        <button id="mobile-clear-button">Limpar</button>
+                    </div>
+                    <ul id="mobile-search-history-list" class="clean-list"></ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mobile-dropdown-wrapper" id="mobile-dropdown-container">
+
+            <!--
+                 <div class="d-flex justify-content-center align-items-center mb-4">
+                <div class="mobile-select-language"></div>
+            </div>
+            -->
+
+
+            <div class="mobile-main-category" id="mobile-all-categories">
+                <i class="bi bi-list icon-categories"></i>
+                <span id="mobile-all-categories-text">Todas as categorias</span>
+            </div>
+            <ul class="mobile-dropdown-list" id="mobile-department-list">
+                <li class="mobile-dropdown-item" id="mobile-dept-1">Departamento</li>
+                <li class="mobile-dropdown-item" id="mobile-dept-2">Departamento</li>
+                <li class="mobile-dropdown-item" id="mobile-dept-3">Departamento</li>
+                <li class="mobile-dropdown-item" id="mobile-dept-4">Departamento</li>
+                <li class="mobile-dropdown-item" id="mobile-dept-5">Departamento</li>
+                <li class="mobile-dropdown-item" id="mobile-dept-6">Departamento</li>
+            </ul>
+        </div>
+
+        <div class="mobile-categories-section" id="mobile-categories-section">
+            <h4 class="mobile-categories-title" id="mobile-categories-title">Departamento</h4>
+            <div class="mobile-categories-wrapper" id="mobile-categories-wrapper">
+                <ul class="mobile-category-list" id="mobile-category-list-1"></ul>
+                <ul class="mobile-category-list" id="mobile-category-list-2"></ul>
+                <ul class="mobile-category-list" id="mobile-category-list-3"></ul>
+            </div>
+        </div>
+
+        <div class="mobile-promo-section" id="mobile-promo-section">
+            <div class="mobile-promo-content" id="mobile-promo-content">
+                <img
+                        src="/assets/image/header/menu-image.png"
+                        alt="image-menu"
+                        class="mobile-promo-image"
+                        id="mobile-promo-image"
+                />
+                <p id="mobile-promo-text">Confira os Produtos <br>
+                    <b id="mobile-promo-highlight">Que acabaram <br>de Chegar!</b>
+                </p>
+                <button type="button" class="mobile-promo-button" id="mobile-view-all-button">Ver todos</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <section class="promo-banner-container">
+        <div class="promo-banner-content">
+            <img
+                    src="/assets/image/main-promo/top-banners/promotion-top-banner.jpg"
+                    alt="banner-image"
+                    class="promo-banner-image"
+            />
+            <img
+                    src="/assets/image/main-promo/top-banners/promotion-top-banner-mobile.png"
+                    alt="banner-image"
+                    class="mobile-promo-banner-image"
+            />
+            <div class="promo-banner-text">
+                <p class="promo-banner-primary-text" data-translate="promoBannerFirstText">
+                    super <span class="promo-banner-span-text" data-translate="promoBannerSecondText"> sale </span>
+                </p>
+                <p class="promo-banner-secondary-text" data-translate="promoBannerThirdText">Itens selecionados com
+                    até</p>
+                <p class="promo-banner-three-text" data-translate="promoBannerFourthText">50% off</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="content-carousel">
+        <div class="container my-5">
+            <div class="section-title">
+                <h2 data-translate="CarouselReleases">Lançamentos</h2>
+                <a href="#" data-translate="CarouselSeemore">Ver mais</a>
+            </div>
+
+            <div class="carousel-container carousel-container-one">
+                <button class="carousel-button prev" id="prevBtn-one">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-content" id="carouselContent-one">
+                    </div>
+                </div>
+
+                <button class="carousel-button next" id="nextBtn-one">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="carousel-separate">
+            <div class="carousel-indicators-bar" id="carouselIndicators-one">
+            </div>
+        </div>
+
+    </div>
+
+
+    <section class="container py-5 mt-8" style="">
+        <div class="row g-5 align-items-center">
+            <div class="col-md-6 product-image-background-color-one">
+                <img src="/assets/image/main-promo/page-banners/promotion-avanti-one.png" alt="promotion-avanti.png"
+                     class="product-image-info img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2 class="fw-bold mb-4">LOREM IPSUM</h2>
+
+                <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut
+                    eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia
+                    pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia.
+                    Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a
+                    libero commodo egestas efficitur id augue.</p>
+
+                <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut
+                    eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia
+                    pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia.
+                    Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a
+                    libero commodo egestas efficitur id augue.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="product-image-background-color-two">
+        <section class="container feature-section">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-1 order-2 mt-4 mt-md-0">
+                    <h2 class="section-title text-center text-md-start">LOREM IPSUM</h2>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                                ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                                ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                                ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-2 order-1 text-center">
+                    <img src="/assets/image/main-promo/page-banners/promotion-avanti-two.png" alt="AVANTI Mug"
+                         class="product-image img-fluid">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="container py-5 mt-8">
+        <div class="row g-5 align-items-center">
+            <div class="col-md-6 product-image-background-color-one">
+                <img src="/assets/image/main-promo/page-banners/promotion-avanti-one.png" alt="AVANTI Mug"
+                     class="product-image-info img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2 class="fw-bold mb-4">LOREM IPSUM</h2>
+
+                <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut
+                    eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia
+                    pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia.
+                    Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a
+                    libero commodo egestas efficitur id augue.</p>
+
+                <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut
+                    eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia
+                    pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia.
+                    Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a
+                    libero commodo egestas efficitur id augue.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="content-carousel">
+        <div class="container my-5">
+            <div class="section-title">
+                <h2 data-translate="CarouselReleases">Mais Vendidos</h2>
+                <a href="#" data-translate="CarouselSeemore">Ver mais</a>
+            </div>
+
+            <div class="carousel-container carousel-container-two">
+                <button class="carousel-button prev" id="prevBtn-two">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-content" id="carouselContent-two">
+                    </div>
+                </div>
+
+                <button class="carousel-button next" id="nextBtn-two">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div class="carousel-separate">
+            <div class="carousel-indicators-bar" id="carouselIndicators-two">
+            </div>
+        </div>
+    </div>
+
+
+    <section class="hero-banner">
+        <img src="/assets/image/main-promo/hero-banners/hero-banner-larger-image.png"
+             class="hero-image d-none d-md-block"
+             alt="AVANTI Banner">
+        <img src="/assets/image/main-promo/hero-banners/hero-minor-banner-image.png" class="hero-image d-md-none"
+             alt="AVANTI Banner Mobile">
+        <div class="hero-overlay-text">
+            <h4 class="m-0" data-translate="heropage.HeroText">Entre em contato conosco e verifique a disponibilidade
+                para sua região!</h4>
+        </div>
+    </section>
+
+    <section class="newsletter-wrapper">
+        <div class="newsletter-inner">
+            <div class="heading-container">
+                <p class="heading-bold" data-translate="newsletter.Signupforour">
+                    Cadastre-se na nossa
+                    <span class="heading-accent" data-translate="newsletter.newsletterText">newsletter</span>
+                </p>
+            </div>
+            <div class="form-outer-container">
+                <div class="inputs-container">
+                    <input
+                            id="input-text-name"
+                            type="text"
+                            class="form-input-name"
+                            placeholder="Digite seu nome"
+                    />
+                    <input
+                            id="input-text-email"
+                            type="email"
+                            class="form-input-email"
+                            placeholder="Digite seu e-mail"
+                    />
+                </div>
+                <div class="consent-container">
+                    <input type="checkbox"/>
+                    <p class="consent-text" data-translate="newsletter.PolicyLinkAgreement">
+                        Estou de acordo com a
+                        <span class="policy-link">Politica de Privacidade</span>
+                    </p>
+                </div>
+                <button type="button" class="submit-button" data-translate="newsletter.Register">Cadastrar</button>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+<footer class="site-footer">
+    <div class="footer-primary">
+        <div class="footer-inner">
+            <div class="footer-main-content">
+                <div class="brand-social">
+                    <div class="brand-logo">
+                        <img src="/assets/image/logo.png" alt="Avanti Logo" class="logo-image"/>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram social-icon"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f social-icon"></i></a>
+                        <a href="#"><i class="fab fa-youtube social-icon"></i></a>
+                        <a href="#"><i class="fab fa-tiktok social-icon"></i></a>
+                    </div>
+                </div>
+
+                <div class="nav-column">
+                    <h4 class="column-title" data-translate="footer.institutional">Institucional</h4>
+                    <h5 class="nav-item" data-translate="footer.aboutUs">Sobre Nós</h5>
+                    <h5 class="nav-item" data-translate="footer.ourStores">Nossas Lojas</h5>
+                    <h5 class="nav-item" data-translate="footer.privacySecurity">Privacidade e Segurança</h5>
+                    <h5 class="nav-item" data-translate="footer.termsConditions">Termos e Condições</h5>
+                </div>
+
+                <div class="nav-column">
+                    <h4 class="column-title" data-translate="footer.helpCenter">Central de ajuda</h4>
+                    <h5 class="nav-item" data-translate="footer.contactUs">Fale Conosco</h5>
+                    <h5 class="nav-item" data-translate="footer.shippingDelivery">Frete e Entrega</h5>
+                    <h5 class="nav-item" data-translate="footer.exchangesReturns">Trocas e Devoluções</h5>
+                    <h5 class="nav-item" data-translate="footer.paymentMethods">Formas de Pagamento</h5>
+                    <h5 class="nav-item" data-translate="footer.faq">FAQ</h5>
+                </div>
+
+                <div class="nav-column">
+                    <h4 class="column-title" data-translate="footer.customerService">Atendimento</h4>
+                    <h5 class="nav-item">
+                        <span class="bold-text" data-translate="footer.phone">Telefone:</span> (00) 1234-5678
+                    </h5>
+                    <h5 class="nav-item">
+                        <span class="bold-text" data-translate="footer.email">E-mail:</span> exemplo@exemplo.com.br
+                    </h5>
+                    <h5 class="nav-item" style="font-weight: bold" data-translate="footer.serviceHours">
+                        Horário de atendimento:
+                    </h5>
+                    <div class="hours-container">
+                        <p class="hours-text" data-translate="footer.weekdayHours">Segunda a Sábado: 07h00 às 23h00</p>
+                        <p class="hours-text" data-translate="footer.weekendHours">Domingos e Feriados: 07h00 às
+                            21h00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion mobile-accordion" id="footerAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+                                data-translate="footer.institutional">
+                            Institucional
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                         data-bs-parent="#footerAccordion">
+                        <div class="accordion-body">
+                            <div>
+                                <h5 class="nav-item" data-translate="footer.aboutUs">Sobre Nós</h5>
+                                <h5 class="nav-item" data-translate="footer.ourStores">Nossas Lojas</h5>
+                                <h5 class="nav-item" data-translate="footer.privacySecurity">Privacidade e
+                                    Segurança</h5>
+                                <h5 class="nav-item" data-translate="footer.termsConditions">Termos e Condições</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
+                                data-translate="footer.helpCenter">
+                            Central de ajuda
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                         data-bs-parent="#footerAccordion">
+                        <div class="accordion-body">
+                            <div>
+                                <h5 class="nav-item" data-translate="footer.contactUs">Fale Conosco</h5>
+                                <h5 class="nav-item" data-translate="footer.shippingDelivery">Frete e Entrega</h5>
+                                <h5 class="nav-item" data-translate="footer.exchangesReturns">Trocas e Devoluções</h5>
+                                <h5 class="nav-item" data-translate="footer.paymentMethods">Formas de Pagamento</h5>
+                                <h5 class="nav-item" data-translate="footer.faq">FAQ</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
+                                data-translate="footer.customerService">
+                            Atendimento
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                         data-bs-parent="#footerAccordion">
+                        <div class="accordion-body">
+                            <h5 class="nav-item">
+                                <span class="bold-text" data-translate="footer.phone">Telefone:</span> (00) 1234-5678
+                            </h5>
+                            <h5 class="nav-item">
+                                <span class="bold-text" data-translate="footer.email">E-mail:</span>
+                                exemplo@exemplo.com.br
+                            </h5>
+                            <h5 class="nav-item" style="font-weight: bold" data-translate="footer.serviceHours">
+                                Horário de atendimento:
+                            </h5>
+                            <div class="hours-container">
+                                <p class="hours-text" data-translate="footer.weekdayHours">Segunda a Sábado: 07h00 às
+                                    23h00</p>
+                                <p class="hours-text" data-translate="footer.weekendHours">Domingos e Feriados: 07h00 às
+                                    21h00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-methods">
+                <img src="/assets/image/icons-payments/icon-amex.png" alt="American Express" class="payment-icon">
+                <img src="/assets/image/icons-payments/icon-mastercard.png" alt="Mastercard" class="payment-icon">
+                <img src="/assets/image/icons-payments/icon-visa.png" alt="Visa" class="payment-icon">
+                <img src="/assets/image/icons-payments/icon-hipercard.png" alt="Hipercard" class="payment-icon">
+                <img src="/assets/image/icons-payments/icon-elo.png" alt="Elo" class="payment-icon">
+                <img src="/assets/image/icons-payments/icon-diners.png" alt="Diners Club" class="payment-icon">
+                <img src="/assets/image/icons-payments/icon-paypal.png" alt="PayPal" class="payment-icon">
+                <img src="/assets/image/icons-payments/icon-pix.png" alt="Pix" class="payment-icon">
+                <img src="/assets/image/icons-payments/icon-code.png" alt="Boleto" class="payment-icon">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-secondary">
+        <div class="footer-bottom-wrapper">
+            <div class="footer-disclaimer">
+                <p class="legal-text" data-translate="footer.legalText">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                    laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam. Quis nostrud exerci tation
+                    ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                    dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla
+                    facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+                    delenit augue duis dolore te feugait nulla facilisi.
+                </p>
+            </div>
+            <div class="certification-container">
+                <img src="/assets/image/icons-footer/partners-footer.png" alt="Certification Partners"
+                     class="certification-logos">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="module" src="/assets/js/Main.js"></script>
+</body>
+</html>

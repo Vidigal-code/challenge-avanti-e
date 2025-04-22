@@ -1,0 +1,28 @@
+.hero-banner {
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: rgba(13, 110, 253, 0.9);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    z-index: 2;
+}
