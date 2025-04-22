@@ -32,7 +32,7 @@ class TranslationManager {
     }
 
     loadTranslations() {
-        return fetch('https://vidigal-code.github.io/challenge-avanti-e/assets/lang/lang.json')
+        return fetch('https://vidigal-code.github.io/challenge-avanti-e/assets/lang/Lang.json')
             .then(response => {
                 if (!response.ok) {
                     console.error("Error loading Lang.json");
