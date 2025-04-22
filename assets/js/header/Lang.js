@@ -32,7 +32,7 @@ class TranslationManager {
     }
 
     loadTranslations() {
-        return fetch('/assets/lang/lang.json')
+        return fetch('/assets/lang/Lang.json')
             .then(response => {
                 if (!response.ok) {
                     console.error("Error loading Lang.json");
