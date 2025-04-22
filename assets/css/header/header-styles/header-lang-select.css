@@ -1,4 +1,5 @@
 .language-select {
+    display: none;
     height: 40px;
     min-width: 100px;
     max-width: 138px;
