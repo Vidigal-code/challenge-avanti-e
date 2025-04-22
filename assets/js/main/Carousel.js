@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const produtos = [
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             nome: "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit",
-            image:"/assets/image/main-carousel/photo-carousel.png",
+            image:"https://vidigal-code.github.io/challenge-avanti-e/assets/image/main-carousel/photo-carousel.png",
             precoOriginal: 89.90,
             precoAtual: 79.90,
             parcelas: 10,
