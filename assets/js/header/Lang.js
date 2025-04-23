@@ -1,10 +1,7 @@
 class TranslationManager {
     constructor() {
-
         this.translations = {};
-
         this.defaultLang = 'pt'; // language default
-
         this.elements = {
             'search-message-input': 'placeholder:searchPlaceholder',
             'input-text-name': 'placeholder:newsletter.InputTextName',
@@ -44,6 +41,7 @@ class TranslationManager {
                 if (data) {
                     this.translations = data;
                     this.updateAllTexts();
+                    this.updateLanguageSelects();
                     return data;
                 }
             })
@@ -175,12 +173,34 @@ class TranslationManager {
         });
     }
 
+    updateLanguageSelects() {
+        const languageSelects = document.querySelectorAll('.language-select');
+
+        languageSelects.forEach(select => {
+
+            select.value = this.defaultLang;
+
+            Array.from(select.options).forEach(option => {
+                const langCode = option.value;
+                const translatedName = this.returnLang(`menu.${langCode}`);
+                option.text = translatedName;
+            });
+
+            select.addEventListener('change', (event) => {
+                const selectedLang = event.target.value;
+                this.setLanguage(selectedLang);
+            });
+        });
+    }
+
     setLanguage(lang) {
         if (this.translations[lang]) {
             this.defaultLang = lang;
             this.updateAllTexts();
+            this.updateLanguageSelects();
             localStorage.setItem('preferredLanguage', lang);
             this.dispatchLanguageChangedEvent(lang);
+            this.updateActiveLanguageButton();
             return true;
         }
         return false;
@@ -193,13 +213,14 @@ class TranslationManager {
 
     init() {
         const storedLang = localStorage.getItem('preferredLanguage');
-        if (storedLang &&  this.availablelanguages.includes(storedLang)) {
+        if (storedLang && this.availablelanguages.includes(storedLang)) {
             this.defaultLang = storedLang;
         }
 
         return this.loadTranslations().then(() => {
             this.addLanguageSwitcherListeners();
             this.updateActiveLanguageButton();
+            this.updateLanguageSelects();
             return this;
         });
     }
