@@ -910,7 +910,7 @@
             }
 
             .bar-item-li {
-                font-weight: 200;
+                font-weight: 500;
                 width: fit-content;
                 display: flex;
                 align-items: center;
@@ -922,7 +922,7 @@
             }
 
             .bar-item-li-font-weight {
-                font-weight: 600;
+                font-weight: 500;
                 width: fit-content;
                 display: flex;
                 align-items: center;

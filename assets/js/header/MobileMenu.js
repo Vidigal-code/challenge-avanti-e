@@ -66,11 +66,11 @@ class MobileMenu {
                     const li = document.createElement('li');
                     li.textContent = item;
 
-                    /*if (itemIndex === 0) {
+                   /* if (itemIndex === 0) {
                         li.style.color = 'var(--color-primary)';
                     }*/
 
-                    li.style.fontWeight = '600';
+                    li.style.fontWeight = '500';
 
 
                     ul.appendChild(li);
