@@ -41,7 +41,7 @@ class TranslationManager {
                 if (data) {
                     this.translations = data;
                     this.updateAllTexts();
-                    this.updateLanguageSelectorText();
+                    this.updateLanguageSelects(); // Added this line to update language selects after translations are loaded
                     return data;
                 }
             })
@@ -173,15 +173,25 @@ class TranslationManager {
         });
     }
 
-    updateLanguageSelectorText() {
-        const currentLang = this.defaultLang;
+    updateLanguageSelects() {
+        const languageSelects = document.querySelectorAll('.language-select');
 
-        this.availablelanguages.forEach(lang => {
-            const langButton = document.querySelector(`[data-lang="${lang}"]`);
-            if (langButton) {
-                const translatedName = this.returnLang(`menu.${lang}`, currentLang);
-                langButton.textContent = translatedName;
-            }
+        languageSelects.forEach(select => {
+            // First, set the current value to match the selected language
+            select.value = this.defaultLang;
+
+            // Then, update the option text with localized language names
+            Array.from(select.options).forEach(option => {
+                const langCode = option.value;
+                const translatedName = this.returnLang(`menu.${langCode}`);
+                option.text = translatedName;
+            });
+
+            // Add event listener for language change
+            select.addEventListener('change', (event) => {
+                const selectedLang = event.target.value;
+                this.setLanguage(selectedLang);
+            });
         });
     }
 
@@ -189,7 +199,7 @@ class TranslationManager {
         if (this.translations[lang]) {
             this.defaultLang = lang;
             this.updateAllTexts();
-            this.updateLanguageSelectorText();
+            this.updateLanguageSelects(); // Update language select options with new language
             localStorage.setItem('preferredLanguage', lang);
             this.dispatchLanguageChangedEvent(lang);
             this.updateActiveLanguageButton();
@@ -212,7 +222,7 @@ class TranslationManager {
         return this.loadTranslations().then(() => {
             this.addLanguageSwitcherListeners();
             this.updateActiveLanguageButton();
-            this.updateLanguageSelectorText();
+            this.updateLanguageSelects(); // Initialize language selects
             return this;
         });
     }
