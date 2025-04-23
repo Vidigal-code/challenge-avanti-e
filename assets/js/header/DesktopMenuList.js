@@ -18,11 +18,15 @@ class MenuHandler {
         this.exposeMethods();
     }
 
-
-    createCategoryItem() {
+    createCategoryItem(rowIndex) {
         const category = document.createElement("li");
-        category.classList.add("menu-categories", "bar-item-li");
+        category.classList.add("menu-categories", "bar-item-li-font-weight");
         category.textContent = "Categoria";
+
+        /*if (rowIndex < 1) {
+            category.style.color = "var(--color-primary)";
+        }*/
+
         return category;
     }
 
@@ -30,8 +34,13 @@ class MenuHandler {
         await translationManager.init();
         const department = translationManager.returnLang("department");
         const element = document.createElement("li");
-        element.classList.add("menu-departament", "bar-item-li");
-        element.innerHTML = `${department} <div style="margin-left: 80px"><i class="bi bi-chevron-right departament-icon"></i></div>`;
+        element.classList.add("menu-departament", "bar-item-li-font-weight");
+        element.innerHTML = `${department} <div style="margin-left: 80px;"><i class="bi bi-chevron-right departament-icon"></i></div>`;
+
+       /* if (index === 0) {
+            element.style.color = "var(--color-primary)";
+        }*/
+
         return element;
     }
 
@@ -46,13 +55,12 @@ class MenuHandler {
         }
     }
 
-
     populateCategories() {
         if (this.menuCategoryContentFirst && this.menuCategoryContentSec && this.menuCategoryContentThird) {
             for (let i = 0; i < 8; i++) {
-                this.menuCategoryContentFirst.appendChild(this.createCategoryItem());
-                this.menuCategoryContentSec.appendChild(this.createCategoryItem());
-                this.menuCategoryContentThird.appendChild(this.createCategoryItem());
+                this.menuCategoryContentFirst.appendChild(this.createCategoryItem(i));
+                this.menuCategoryContentSec.appendChild(this.createCategoryItem(i));
+                this.menuCategoryContentThird.appendChild(this.createCategoryItem(i));
             }
         }
     }
@@ -88,5 +96,3 @@ export {MenuHandler};
 document.addEventListener('DOMContentLoaded', () => {
     new MenuHandler();
 });
-
-
