@@ -1,7 +1,57 @@
 class TranslationManager {
     constructor() {
         this.translations = {};
-        this.defaultLang = 'pt'; // language default
+
+        // Set the default language to Portuguese
+        this.defaultLang = 'pt'; // Default language
+
+        // List of available languages in the application
+        this.availablelanguages = ['pt', 'en', 'es']; // Add more languages here if needed
+
+        /*
+        JSON structure for translations:
+
+        This object holds translations for different languages.
+        Each top-level key (like "pt", "en", "es") represents a language code.
+
+        Inside each language object:
+        - The "menu" object contains how each language name should appear in the selected language.
+        - You can add other content (like page titles, messages, labels) in the same language object.
+
+        Example:
+
+        "pt": { // Portuguese language block
+          "menu": {
+            "pt": "Português",   // How 'Portuguese' appears in Portuguese
+            "en": "Inglês",       // How 'English' appears in Portuguese
+            "es": "Espanhol"      // How 'Spanish' appears in Portuguese
+          },
+          // Other content here...
+        },
+
+        "en": { // English language block
+          "menu": {
+            "pt": "Portuguese",   // How 'Portuguese' appears in English
+            "en": "English",      // How 'English' appears in English
+            "es": "Spanish"       // How 'Spanish' appears in English
+          },
+          // Other content here...
+        },
+
+        "es": { // Spanish language block
+          "menu": {
+            "pt": "Portugués",    // How 'Portuguese' appears in Spanish
+            "en": "Inglés",       // How 'English' appears in Spanish
+            "es": "Español"       // How 'Spanish' appears in Spanish
+          },
+          // Other content here...
+        }
+
+
+        This JSON would typically be stored in a separate file (e.g., `Lang.json`) and loaded at runtime.
+        */
+
+
         this.elements = {
             'search-message-input': 'placeholder:searchPlaceholder',
             'input-text-name': 'placeholder:newsletter.InputTextName',
@@ -25,7 +75,6 @@ class TranslationManager {
             'titulo': 'pageTitle'
         };
 
-        this.availablelanguages = ['pt', 'en', 'es']; //add more language here
     }
 
     loadTranslations() {
@@ -86,7 +135,7 @@ class TranslationManager {
             if (translation) return translation;
         }
 
-        console.warn(`Translation not found for [${lang}][${key}]`);
+        //console.warn(`Translation not found for [${lang}][${key}]`);
         return key;
     }
 
@@ -163,6 +212,7 @@ class TranslationManager {
 
         this.updateDepartmentItems('.department-text', 'department');
         this.updateDepartmentItems('.mobile-dropdown-item', 'department');
+        this.updateDepartmentItems('.category-text', 'category');
         this.updateDynamicTextElements();
     }
 
