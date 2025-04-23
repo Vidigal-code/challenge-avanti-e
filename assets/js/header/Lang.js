@@ -41,7 +41,7 @@ class TranslationManager {
                 if (data) {
                     this.translations = data;
                     this.updateAllTexts();
-                    this.updateLanguageSelects(); 
+                    this.updateLanguageSelects();
                     return data;
                 }
             })
