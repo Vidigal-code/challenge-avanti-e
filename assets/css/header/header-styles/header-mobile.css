@@ -424,6 +424,7 @@
     }
 
     .mobile-dropdown-list {
+        font-weight: 500;
         list-style: none;
         padding: 0;
         margin: 0;
@@ -449,7 +450,7 @@
     }
 
     .mobile-categories-title {
-        color: #005cff;
+        /*color: #005cff;*/
         font-size: 1.3rem;
         margin-bottom: 1rem;
         font-weight: 600;

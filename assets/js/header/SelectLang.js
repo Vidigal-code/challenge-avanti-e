@@ -6,7 +6,7 @@ class LanguageSelector {
     }
 
     init() {
-        return import('https://vidigal-code.github.io/challenge-avanti-e/assets/lang/Lang.json')
+        return import('https://vidigal-code.github.io/challenge-avanti-e/assets/js/header/Lang.js')
             .then(module => {
                 this.translationManager = module.translationManager;
                 return this.translationManager.loadTranslations()
