@@ -1,5 +1,31 @@
 # 🚀 Projeto: Layout Responsivo com Interações
 
+## Descrição dos Ambientes
+
+Versão do Projeto: **HTML, CSS** e **JavaScript**
+
+## Ambientes e Estado do Menu
+
+- [✅ Menu com cor ativa ON](https://vidigal-code.github.io/challenge-avanti-e/)
+  - Visual fiel ao Figma.
+  - Este é o ambiente padrão sem sistema de tradução.
+  - A cor ativa do menu está funcionando corretamente.
+
+- [🌙 Menu com cor ativa OFF](https://challenge-avanti-e.vercel.app/)
+  - Este é o ambiente padrão sem sistema de tradução.
+  - A cor ativa do menu **não está** aplicada.
+
+- [🌍 Com sistema de tradução | ✅ Menu com cor ativa ON](https://challenge-avanti-e-git-language-046f3d-kauan-vidigals-projects.vercel.app/)
+  - Tradução funcionando.
+  - Visual fiel ao Figma.
+  - Cor ativa do menu aplicada corretamente.
+
+- [🌍 Com sistema de tradução | 🌙 Menu com cor ativa OFF](https://challenge-avanti-e-git-language-28c3e9-kauan-vidigals-projects.vercel.app/)
+  - Este ambiente está totalmente fiel ao Figma.
+  - Sistema de tradução integrado.
+  - A cor ativa do menu **não está** aplicada.
+
+
 ### 📝 Objetivo:
 Desenvolver um layout proposto utilizando **HTML, CSS** e **JavaScript**.
 
@@ -28,8 +54,8 @@ Desenvolver um layout proposto utilizando **HTML, CSS** e **JavaScript**.
 
 - **Objetivo**: Implementar um campo de busca.
 - **Funcionalidade**:
-    - Ao clicar no botão de busca, exibe a mensagem:
-      > **Você buscou por: _'termo digitado'_**
+  - Ao clicar no botão de busca, exibe a mensagem:
+    > **Você buscou por: _'termo digitado'_**
 ---
 
 ### 🖼️ Visual do Campo de Busca
@@ -111,7 +137,7 @@ O **Carousel.JS** controla a exibição interativa de produtos em um carrossel. 
 
 ---
 
-## 🚀 MenuList - DeskTopMenuList - `DesktopMenuList.JS` 
+## 🚀 MenuList - DeskTopMenuList - `DesktopMenuList.JS`
 
 ### 🖼️ Visual do MenuList
 
@@ -180,9 +206,9 @@ O arquivo organiza as traduções nas seguintes seções principais:
 ### 1. Identificadores de Idiomas
 ```json
 "menu": {
-  "pt": "Português",
-  "en": "Inglês",
-  "es": "Espanhol"
+"pt": "Português",
+"en": "Inglês",
+"es": "Espanhol"
 }
 ```
 Define como cada idioma é exibido no seletor de idiomas.
