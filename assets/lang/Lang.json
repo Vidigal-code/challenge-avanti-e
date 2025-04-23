@@ -19,6 +19,7 @@
     "username": "nome cliente!",
     "allCategories": "Todas as categorias",
     "department": "Departamento",
+    "category": "Categoria",
     "searchHistory": "Lista de Busca",
     "clearButton": "Limpar",
     "menuTitle": "Menu",
@@ -98,6 +99,7 @@
     "username": "customer name!",
     "allCategories": "All categories",
     "department": "Department",
+    "category": "Category",
     "searchHistory": "Search History",
     "clearButton": "Clear",
     "menuTitle": "Menu",
@@ -127,6 +129,7 @@
     "heropage": {
       "HeroText": "Contact us and check availability in your region!"
     },
+
     "newsletter": {
       "Signupforour": "Sign up for our",
       "newsletterText": " newsletter",
@@ -178,6 +181,7 @@
     "username": "del cliente!",
     "allCategories": "Todas las categorías",
     "department": "Departamento",
+    "category": "Categoria",
     "searchHistory": "Historial de Búsqueda",
     "clearButton": "Limpiar",
     "menuTitle": "Menú",
@@ -207,6 +211,7 @@
     "heropage": {
       "HeroText": "¡Contáctanos y verifica la disponibilidad en tu región!"
     },
+
     "newsletter": {
       "Signupforour": "Suscríbete a nuestro",
       "newsletterText": " newsletter",
