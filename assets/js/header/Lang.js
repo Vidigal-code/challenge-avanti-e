@@ -65,6 +65,7 @@ class TranslationManager {
             'mobile-all-categories-text': 'allCategories',
             'title-categories': 'department',
             'mobile-categories-title': 'department',
+            'desktop-department': 'department',
             'history-button': 'searchHistory',
             'clear-button': 'clearButton',
             'mobile-menu-title': 'menuTitle',
@@ -214,7 +215,19 @@ class TranslationManager {
         this.updateDepartmentItems('.mobile-dropdown-item', 'department');
         this.updateDepartmentItems('.category-text', 'category');
         this.updateDynamicTextElements();
+
     }
+
+     updateDepartmentIconsMarginLeft() {
+        const lang = translationManager.defaultLang;
+        const marginLeft = (lang === "en") ? "100px" : "80px";
+        const icons = document.querySelectorAll(".departament-icon");
+
+        icons.forEach(icon => {
+            icon.style.marginLeft = marginLeft;
+        });
+    }
+
 
     updateDepartmentItems(selector, translationKey) {
         const departmentItems = document.querySelectorAll(selector);
@@ -239,6 +252,7 @@ class TranslationManager {
             select.addEventListener('change', (event) => {
                 const selectedLang = event.target.value;
                 this.setLanguage(selectedLang);
+                this.updateDepartmentIconsMarginLeft();
             });
         });
     }
