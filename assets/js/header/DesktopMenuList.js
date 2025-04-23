@@ -23,9 +23,9 @@ class MenuHandler {
         category.classList.add("category-text", "menu-categories", "bar-item-li-font-weight");
         category.textContent = translationManager.returnLang("category");
 
-       /* if (rowIndex < 1) {
+       if (rowIndex < 1) {
             category.style.color = "var(--color-primary)";
-        }*/
+        }
 
         return category;
     }
@@ -46,9 +46,9 @@ class MenuHandler {
         <div><i class="bi bi-chevron-right departament-icon" style="margin-left: ${marginLeft};"></i></div>
          `;
 
-        /*if (index === 0) {
+        if (index === 0) {
             element.style.color = "var(--color-primary)";
-        }*/
+        }
 
         return element;
     }

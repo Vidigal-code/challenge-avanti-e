@@ -80,9 +80,9 @@ class MobileMenu {
                     li.textContent = item;
                     li.classList.add('category-text');
 
-                   /* if (itemIndex === 0) {
+                    if (itemIndex === 0) {
                         li.style.color = 'var(--color-primary)';
-                    }*/
+                    }
 
                     li.style.fontWeight = '500';
 
