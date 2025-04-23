@@ -20,10 +20,10 @@ class MenuHandler {
 
     createCategoryItem(rowIndex) {
         const category = document.createElement("li");
-        category.classList.add("category-text","menu-categories", "bar-item-li-font-weight");
+        category.classList.add("category-text", "menu-categories", "bar-item-li-font-weight");
         category.textContent = translationManager.returnLang("category");
 
-        if (rowIndex < 1) {
+       if (rowIndex < 1) {
             category.style.color = "var(--color-primary)";
         }
 
@@ -31,11 +31,20 @@ class MenuHandler {
     }
 
     async createDepartmentItem(index) {
+
         await translationManager.init();
         const department = translationManager.returnLang("department");
         const element = document.createElement("li");
-        element.classList.add("department-text","menu-departament", "bar-item-li-font-weight");
-        element.innerHTML = `${department} <div style="margin-left: 80px;"><i class="bi bi-chevron-right departament-icon"></i></div>`;
+
+        element.classList.add("menu-departament", "bar-item-li-font-weight");
+
+        const lang = translationManager.defaultLang;
+        const marginLeft = (lang === "en") ? "100px" : "80px";
+
+        element.innerHTML = `
+        <span data-translate="department">${department}</span>
+        <div><i class="bi bi-chevron-right departament-icon" style="margin-left: ${marginLeft};"></i></div>
+         `;
 
         if (index === 0) {
             element.style.color = "var(--color-primary)";
@@ -43,6 +52,10 @@ class MenuHandler {
 
         return element;
     }
+
+
+
+
 
     async populateDepartments() {
         if (this.menuDepartamentContent) {
