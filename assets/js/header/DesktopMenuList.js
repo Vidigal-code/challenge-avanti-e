@@ -23,9 +23,9 @@ class MenuHandler {
         category.classList.add("menu-categories", "bar-item-li-font-weight");
         category.textContent = "Categoria";
 
-        /*if (rowIndex < 1) {
+        if (rowIndex < 1) {
             category.style.color = "var(--color-primary)";
-        }*/
+        }
 
         return category;
     }
@@ -37,9 +37,9 @@ class MenuHandler {
         element.classList.add("menu-departament", "bar-item-li-font-weight");
         element.innerHTML = `${department} <div style="margin-left: 80px;"><i class="bi bi-chevron-right departament-icon"></i></div>`;
 
-       /* if (index === 0) {
+       if (index === 0) {
             element.style.color = "var(--color-primary)";
-        }*/
+        }
 
         return element;
     }
