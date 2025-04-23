@@ -1,10 +1,7 @@
 class TranslationManager {
     constructor() {
-
         this.translations = {};
-
         this.defaultLang = 'pt'; // language default
-
         this.elements = {
             'search-message-input': 'placeholder:searchPlaceholder',
             'input-text-name': 'placeholder:newsletter.InputTextName',
@@ -32,7 +29,7 @@ class TranslationManager {
     }
 
     loadTranslations() {
-        return fetch('https://vidigal-code.github.io/challenge-avanti-e/assets/lang/Lang.json')
+        return fetch('/assets/lang/Lang.json')
             .then(response => {
                 if (!response.ok) {
                     console.error("Error loading Lang.json");
@@ -44,6 +41,7 @@ class TranslationManager {
                 if (data) {
                     this.translations = data;
                     this.updateAllTexts();
+                    this.updateLanguageSelectorText();
                     return data;
                 }
             })
@@ -175,12 +173,26 @@ class TranslationManager {
         });
     }
 
+    updateLanguageSelectorText() {
+        const currentLang = this.defaultLang;
+
+        this.availablelanguages.forEach(lang => {
+            const langButton = document.querySelector(`[data-lang="${lang}"]`);
+            if (langButton) {
+                const translatedName = this.returnLang(`menu.${lang}`, currentLang);
+                langButton.textContent = translatedName;
+            }
+        });
+    }
+
     setLanguage(lang) {
         if (this.translations[lang]) {
             this.defaultLang = lang;
             this.updateAllTexts();
+            this.updateLanguageSelectorText();
             localStorage.setItem('preferredLanguage', lang);
             this.dispatchLanguageChangedEvent(lang);
+            this.updateActiveLanguageButton();
             return true;
         }
         return false;
@@ -193,13 +205,14 @@ class TranslationManager {
 
     init() {
         const storedLang = localStorage.getItem('preferredLanguage');
-        if (storedLang &&  this.availablelanguages.includes(storedLang)) {
+        if (storedLang && this.availablelanguages.includes(storedLang)) {
             this.defaultLang = storedLang;
         }
 
         return this.loadTranslations().then(() => {
             this.addLanguageSwitcherListeners();
             this.updateActiveLanguageButton();
+            this.updateLanguageSelectorText();
             return this;
         });
     }
