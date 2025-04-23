@@ -20,12 +20,12 @@ class MenuHandler {
 
     createCategoryItem(rowIndex) {
         const category = document.createElement("li");
-        category.classList.add("menu-categories", "bar-item-li-font-weight");
-        category.textContent = "Categoria";
+        category.classList.add("category-text","menu-categories", "bar-item-li-font-weight");
+        category.textContent = translationManager.returnLang("category");
 
-      /*  if (rowIndex < 1) {
+        if (rowIndex < 1) {
             category.style.color = "var(--color-primary)";
-        }*/
+        }
 
         return category;
     }
@@ -34,12 +34,12 @@ class MenuHandler {
         await translationManager.init();
         const department = translationManager.returnLang("department");
         const element = document.createElement("li");
-        element.classList.add("menu-departament", "bar-item-li-font-weight");
+        element.classList.add("department-text","menu-departament", "bar-item-li-font-weight");
         element.innerHTML = `${department} <div style="margin-left: 80px;"><i class="bi bi-chevron-right departament-icon"></i></div>`;
 
-      /* if (index === 0) {
+        if (index === 0) {
             element.style.color = "var(--color-primary)";
-        }*/
+        }
 
         return element;
     }
@@ -55,7 +55,7 @@ class MenuHandler {
         }
     }
 
-    populateCategories() {
+    async populateCategories() {
         if (this.menuCategoryContentFirst && this.menuCategoryContentSec && this.menuCategoryContentThird) {
             for (let i = 0; i < 8; i++) {
                 this.menuCategoryContentFirst.appendChild(this.createCategoryItem(i));

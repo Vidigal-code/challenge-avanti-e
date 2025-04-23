@@ -8,11 +8,9 @@ class MobileMenu {
             document.getElementById('mobile-category-list-2'),
             document.getElementById('mobile-category-list-3')
         ];
-        this.categories = [
-            ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-            ['Item 5', 'Item 6', 'Item 7', 'Item 8'],
-            ['Item 9', 'Item 10', 'Item 11', 'Item 12']
-        ];
+
+
+
     }
 
     init() {
@@ -58,17 +56,33 @@ class MobileMenu {
         }
     }
 
-    populateCategories() {
+    async  populateCategories() {
+        await translationManager.init();
+        const category = translationManager.returnLang("category");
+
+        this.categories = [];
+
+        let count = 1;
+        for (let i = 0; i < 3; i++) {
+            const row = [];
+            for (let j = 0; j < 4; j++) {
+                row.push(`${category} ${count++}`);
+            }
+            this.categories.push(row);
+        }
+
+
         this.categories.forEach((items, index) => {
             const ul = this.categoryLists[index];
             if (ul) {
                 items.forEach((item, itemIndex) => {
                     const li = document.createElement('li');
                     li.textContent = item;
+                    li.classList.add('category-text');
 
-                  /*  if (itemIndex === 0) {
+                    if (itemIndex === 0) {
                         li.style.color = 'var(--color-primary)';
-                    }*/
+                    }
 
                     li.style.fontWeight = '500';
 
