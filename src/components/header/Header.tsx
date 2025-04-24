@@ -194,7 +194,7 @@ const Header: React.FC = () => {
                                                 <li key={index} className="menu-departament bar-item-li-font-weight">
                                                     <span
                                                         style={{
-                                                            color: index === 0 ? 'var(--color-primary)' : undefined
+                                                            //color: index === 0 ? 'var(--color-primary)' : undefined
                                                         }}
                                                     >{department}</span>
                                                     <div>
@@ -202,7 +202,7 @@ const Header: React.FC = () => {
                                                             className="bi bi-chevron-right departament-icon"
                                                             style={{
                                                                 marginLeft,
-                                                                color: index === 0 ? 'var(--color-primary)' : undefined
+                                                                //color: index === 0 ? 'var(--color-primary)' : undefined
                                                             }}
                                                         ></i>
                                                     </div>
@@ -224,7 +224,7 @@ const Header: React.FC = () => {
                                                             className="category-text"
                                                             style={{
                                                                 fontWeight: 500,
-                                                                color: i === 0 && idx < 1 || i === 1 && idx < 1 || i === 2 && idx < 1 ? 'var(--color-primary)' : undefined
+                                                               // color: i === 0 && idx < 1 || i === 1 && idx < 1 || i === 2 && idx < 1 ? 'var(--color-primary)' : undefined
                                                             }}
                                                         >
                                                             {item}

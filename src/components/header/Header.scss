@@ -764,6 +764,15 @@
         }
       }
 
+      .category-text {
+        font-weight: 500;
+      }
+
+      .category-text:hover {
+        color: var(--color-primary);
+      }
+
+
       .categories-menu-items {
         display: flex;
         flex-direction: column;
