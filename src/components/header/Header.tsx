@@ -1,7 +1,6 @@
 import './Header.scss';
 import SearchComponent from "./SearchHandler.tsx";
 import {useEffect, useRef, useState} from "react";
-import {Language} from "../../ts/Lang.ts";
 import LangJSON from "../../assets/lang/Lang.json";
 import {useLanguage} from "../context/LanguageProvider.tsx";
 
@@ -21,11 +20,11 @@ const Header: React.FC = () => {
         useRef<HTMLUListElement>(null)
     ];
 
-    const {language, setLanguage, translations} = useLanguage();
+    const {language,  translations} = useLanguage();
 
-    const handleLanguageChange = (lang: Language): void => {
+   /*const handleLanguageChange = (lang: Language): void => {
         setLanguage(lang);
-    };
+    };*/
 
 
     useEffect(() => {
