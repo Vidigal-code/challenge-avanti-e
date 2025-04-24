@@ -1,307 +1,290 @@
-# 🚀 Projeto: Layout Responsivo com Interações
+# Projeto: Layout Responsivo com React e TypeScript
 
-## Descrição dos Ambientes 
+## 📋 Visão Geral
 
-Versão do Projeto: **HTML, CSS** e **JavaScript**
+Este projeto implementa um layout responsivo de e-commerce usando **React**, **TypeScript** e **SCSS**. A aplicação
+apresenta uma interface completa com múltiplos componentes interativos e suporte a internacionalização.
 
-## Ambientes e Estado do Menu
+A aplicação é configurada com o **Vite**, que proporciona um ambiente de desenvolvimento rápido e eficiente, com suporte
 
-- [✅ Menu com cor ativa ON](https://vidigal-code.github.io/challenge-avanti-e/)
-  - Visual fiel ao Figma.
-  - Este é o ambiente padrão sem sistema de tradução.
-  - A cor ativa do menu está funcionando corretamente.
+### 🧰 Tecnologias Principais
 
-- [🌙 Menu com cor ativa OFF](https://challenge-avanti-e.vercel.app/)
-  - Este é o ambiente padrão sem sistema de tradução.
-  - A cor ativa do menu **não está** aplicada.
+- **React 19** – Biblioteca JavaScript moderna para criação de interfaces de usuário
+- **TypeScript** – Superset tipado de JavaScript, garantindo maior segurança no desenvolvimento
+- **Vite** – Ferramenta de build e servidor de desenvolvimento rápido
+- **Tailwind CSS** – Framework utilitário para estilização com CSS
+- **React Icons** – Biblioteca de ícones personalizáveis para React
+- **SWC** – Compilador ultrarrápido usado pelo plugin React do Vite
+- **SASS (SCSS)** – Pré-processador CSS para estilização avançada
 
-- [🌍 Com sistema de tradução | ✅ Menu com cor ativa ON](https://challenge-avanti-e-git-language-046f3d-kauan-vidigals-projects.vercel.app/)
-  - Tradução funcionando.
-  - Visual fiel ao Figma.
-  - Cor ativa do menu aplicada corretamente.
+### ⚙️ Ferramentas de Desenvolvimento
 
-- [🌍 Com sistema de tradução | 🌙 Menu com cor ativa OFF](https://challenge-avanti-e-git-language-28c3e9-kauan-vidigals-projects.vercel.app/)
-  - Este ambiente está totalmente fiel ao Figma.
-  - Sistema de tradução integrado.
-  - A cor ativa do menu **não está** aplicada.
+- **ESLint** – Ferramenta de linting para garantir qualidade e consistência do código
 
+O projeto está estruturado para suportar um fluxo de desenvolvimento moderno, incluindo scripts para ambiente local,
+build de produção, linting e visualização de preview.
 
-### 📝 Objetivo:
-Desenvolver um layout proposto utilizando **HTML, CSS** e **JavaScript**.
+O foco da aplicação é construir uma interface de e-commerce **responsiva**, adaptável para **desktop e mobile**,
+seguindo um layout predefinido com interatividade construída em **React**.
 
-## ✅ Requisitos:
-
-### 1️⃣ Estrutura HTML
-- Criar a estrutura da página conforme o layout fornecido.
-
-### 2️⃣ Estilização com CSS
-- Aplicar estilos garantindo um layout **responsivo** (Desktop e Mobile).
+## 🚀 Principais Recursos
 
 ### 🖼️ Layout
 
 **🔍 Versão Desktop:**
 
-![Campo de Busca Desktop](assets/example/page-layout-design-Desktop.gif)
+![Desktop](https://github.com/Vidigal-code/challenge-avanti-e/blob/main/assets/example/page-layout-design-Desktop.gif?raw=true)
 ---
 
 **📱 Versão Mobile:**
 
-![Campo de Busca Desktop](assets/example/page-layout-design-Mobile.gif)
+![Mobile](https://github.com/Vidigal-code/challenge-avanti-e/blob/main/assets/example/page-layout-design-Mobile.gif?raw=true)
 ---
 
+### 1️⃣ Layout Responsivo
 
-### 3️⃣ Funcionalidade com JavaScript
+- Interface adaptável para desktop e dispositivos móveis
+- Menus de navegação otimizados para diferentes tamanhos de tela
+- Elementos de UI redesenhados para experiência móvel
 
-- **Objetivo**: Implementar um campo de busca.
-- **Funcionalidade**:
-    - Ao clicar no botão de busca, exibe a mensagem:
-      > **Você buscou por: _'termo digitado'_**
----
+### 2️⃣ Sistema de Busca
 
-### 🖼️ Visual do Campo de Busca
+- Campo de busca funcional com feedback visual
+- Armazenamento do histórico de buscas
+- Interface para visualizar e gerenciar buscas anteriores
 
----
+### 3️⃣ Carrossel de Produtos
 
-**🔍 Versão Desktop:**
+- Exibição de produtos com rolagem automática
+- Navegação manual através de botões e indicadores
+- Layout responsivo que ajusta o número de itens conforme a largura da tela
 
-![Campo de Busca Desktop](assets/example/search-example-Desktop.gif)
+### 4️⃣ Suporte Multilíngue
 
----
+- Internacionalização completa (Português, Inglês e Espanhol)
+- Persistência da seleção de idioma entre sessões
+- Estrutura de tradução flexível com suporte a formatação
 
-**📱 Versão Mobile:**
+## 🧩 Componentes Principais
 
-![Campo de Busca Desktop](assets/example/search-example-Mobile.gif)
+### 📌 Header (`Header.tsx`)
 
----
+O componente `Header` é responsável por renderizar a **barra superior da aplicação**, oferecendo suporte completo a
+navegação, seleção de idioma e exibição dinâmica de categorias e departamentos.
 
-### Resumo do código Search.JS:
+#### 🧩 Funcionalidades
 
-O **Search.JS** gerencia o histórico de buscas de um usuário. Quando um termo é pesquisado, ele:
-1. Exibe a mensagem de "Você buscou por: _'termo digitado'_".
-2. Adiciona a pesquisa ao histórico (limitado a 10 entradas).
-3. Exibe uma lista de buscas anteriores, com a possibilidade de limpar ou selecionar uma pesquisa passada.
-4. Se o campo de busca estiver vazio, mostra um aviso solicitando ao usuário para digitar algo.
-5. Permite ao usuário fechar o popup ou visualizar o histórico.
+- **Menu de navegação com dropdown**
+- **Sistema de busca integrado**
+- **Seletor de idiomas dinâmico**
+- **Menu móvel com ícone de hambúrguer**
+- **Faixa Promocional (stripe):** Mostra mensagens de desconto e cupons dinâmicos com base no idioma selecionado.
+- **Logo:** Exibe a imagem da marca no canto esquerdo.
+- **Barra de Busca:** Usa o componente `SearchComponent` com suporte para versão mobile ou desktop.
+- **Ícones do Usuário:** Inclui ícone de menu (hambúrguer), perfil do usuário e carrinho de compras com contador.
+- **Seleção de Idioma:** Um `<select>` permite trocar entre idiomas definidos em `LangJSON`.
 
-### Funcionalidade Detalhada:
+Além disso, o componente:
+- Usa o hook `useLanguage()` para acessar as traduções.
+- Carrega categorias e departamentos simulados de forma assíncrona.
+- Controla o estado para saber se está no mobile ou não (`isMobile`).
 
-- **Gerenciamento do Histórico de Buscas**: O histórico é armazenado localmente no navegador e exibido quando o usuário clica no botão de histórico.
-- **Eventos de Interação**: O código detecta interações, como pressionamento da tecla Enter ou cliques no ícone de busca.
-- **Feedback Visual**: O código fornece feedback visual, como mensagens de erro ou confirmação, dependendo do estado da pesquisa.
+Tudo isso estilizado via `Header.scss`.
 
-Esse script melhora a experiência de busca ao fornecer feedback em tempo real e permitir o acesso rápido a buscas anteriores.
-
----
-
-## 🚀 Carrossel de Produtos - `Carousel.JS`
-
-### 🖼️ Visual do Carrossel
-
-**🔍 Versão Desktop:**
-
-![Campo de Busca Desktop](assets/example/carousel-example-Desktop.gif)
-
-**📱 Versão Mobile:**
-
-![Campo de Busca Mobile](assets/example/carousel-example-Mobile.gif)
-
-
-
-### 🧠 Resumo do código **Carousel.JS**
-
-O **Carousel.JS** controla a exibição interativa de produtos em um carrossel. Ele:
-
-1️⃣ Cria dinamicamente os cards de produtos a partir de um array.  
-2️⃣ Permite navegar entre páginas com **botões** e **bolinhas indicadoras**.  
-3️⃣ Se adapta automaticamente à largura da tela (responsivo).  
-4️⃣ Move os itens com transição suave utilizando `transform: translateX(...)`.
 
 ---
 
-### ⚙️ Funcionalidades Detalhadas
+### 🔍 **Sistema de Busca (SearchHandler + SearchComponent)**
 
-- **🧱 Geração dos Cards de Produto**:  
-  Cada produto é renderizado com imagem, nome, preços e botão de compra.
+#### 📦 `SearchComponent`
+- Componente **wrapper**.
+- Define prefixos para IDs baseados em `isMobile` (ex: `mobile-search-message-input`).
+- Passa props para `SearchHandler`.
 
-- **🔘 Indicadores Clicáveis**:  
-  Pequenas bolinhas (dots) indicam a página atual e podem ser clicadas para navegação direta.
+#### 🧠 `SearchHandler`
+Gerencia toda a lógica da busca:
+- **inputValue**: valor digitado.
+- **searchResult**: resultado da busca.
+- **searchHistory**: histórico salvo (até 10 itens no `localStorage`).
+- **placeholder dinâmico**: muda em caso de erro.
+- **popup**: exibe resultado da busca.
+- **history**: exibe histórico se solicitado.
+- Usa **traduções** com `useLanguage`.
 
-- **↔️ Botões Anterior/Próximo**:  
-  Permite alternar entre páginas do carrossel manualmente.
-
-- **📐 Responsivo**:  
-  Detecta a largura da tela e exibe de 1 a 5 produtos por página automaticamente.
-
-- **⏱️ Autoplay (opcional)**:  
-  Troca de páginas automaticamente em intervalos definidos, para manter o conteúdo sempre em movimento.
-
----
-
-## 🚀 MenuList - DeskTopMenuList - `DesktopMenuList.JS` 
-
-### 🖼️ Visual do MenuList
-
-**🔍 Versão Desktop:**
-
-![Campo de Busca Desktop](assets/example/page-layout-design-menulist-Desktop.gif)
+#### 📌 Funcionalidades:
+- Busca com **Enter** ou clique no ícone 🔍.
+- Adiciona ao histórico, evitando duplicatas.
+- Mostra mensagem de erro se o campo estiver vazio.
+- Compatível com **mobile e desktop**.
 
 ---
 
-### Resumo do código MenuHandler (DesktopMenuList.js):
 
-O **MenuHandler** gerencia a navegação do menu desktop do site. Ele:
-1. Inicializa e popula os menus de departamentos e categorias.
-2. Permite abrir e fechar o menu de navegação.
-3. Alterna entre a visualização de departamentos e categorias.
-4. Expõe métodos globais para interação com o menu.
+## 🎠 Classe `Carousel` - Exemplo em TypeScript
 
-### Funcionalidade Detalhada:
-- **Gerenciamento de Elementos**: Manipula containers e conteúdos para menus de departamentos e categorias.
-- **Criação Dinâmica**: Gera itens de departamentos (com suporte a tradução) e categorias.
-- **Interatividade**: Implementa funções para abrir e fechar o menu, com controle visual dos elementos.
-- **Internacionalização**: Integra com um sistema de tradução para textos do menu.
+```typescript
+export class Carousel {
+    private produtos: Produto[];
+    private carouselContent: HTMLElement;
+    private indicatorsContainer: HTMLElement;
+    private prevBtn: HTMLElement;
+    private nextBtn: HTMLElement;
+    private containerSelector: string;
+    private currentPage: number;
+    private itemsPerView: number;
+    private totalPages: number;
+    private autoScrollInterval: number | null;
 
----
+    constructor(
+        produtos: Produto[],
+        carouselContentId: string,
+        indicatorsContainerId: string,
+        prevBtnId: string,
+        nextBtnId: string,
+        containerSelector: string
+    ) {
+        this.produtos = produtos;
 
-## 🚀 MenuList - MobileMenu - `MobileMenu.JS`
+        // Obtém os elementos HTML pelo ID
+        this.carouselContent = document.getElementById(carouselContentId) as HTMLElement;
+        this.indicatorsContainer = document.getElementById(indicatorsContainerId) as HTMLElement;
+        this.prevBtn = document.getElementById(prevBtnId) as HTMLElement;
+        this.nextBtn = document.getElementById(nextBtnId) as HTMLElement;
+        this.containerSelector = containerSelector;
 
+        // Inicializa os valores
+        this.currentPage = 0;
+        this.itemsPerView = this.getItemsPerView(); // Define com base na largura da tela
+        this.totalPages = Math.ceil(this.produtos.length / this.itemsPerView);
+        this.autoScrollInterval = null;
 
-**📱 Versão Mobile:**
-
-![Campo de Busca Mobile](assets/example/page-layout-design-menulist-Mobile.gif)
-
----
-
-### Resumo do código MobileMenu.js:
-
-O **MobileMenu** gerencia a versão móvel do menu de navegação. Ele:
-1. Controla a exibição do menu através de botões de toggle.
-2. Popula listas de categorias com itens predefinidos.
-3. Implementa a navegação entre departamentos e atualiza o título da seção.
-4. Inicializa a interface apenas quando os elementos necessários estão presentes.
-
-### Funcionalidade Detalhada:
-- **Toggle do Menu**: Adiciona/remove a classe 'active' para mostrar/esconder o menu.
-- **População Dinâmica**: Cria e adiciona itens às listas de categorias.
-- **Navegação Contextual**: Atualiza o título conforme o departamento selecionado.
-- **Inicialização Condicional**: Verifica a existência dos elementos antes de inicializar.
-
-Ambos os componentes trabalham de forma complementar para fornecer uma experiência de navegação consistente em diferentes dispositivos, adaptando a apresentação e a interatividade conforme o tamanho da tela.
-
----
-
-## 🚀 Lang -   `SelectLang.JS` and `Lang.JS`
-
-# Resumo do Arquivo de Traduções (Lang.json)
-
-## Estrutura Geral
-O arquivo JSON contém traduções para uma loja virtual em três idiomas:
-- **Português (pt)** - idioma principal/padrão
-- **Inglês (en)**
-- **Espanhol (es)**
-
-## Categorias de Traduções
-O arquivo organiza as traduções nas seguintes seções principais:
-
-### 1. Identificadores de Idiomas
-```json
-"menu": {
-  "pt": "Português",
-  "en": "Inglês",
-  "es": "Espanhol"
+        this.init(); // Inicia o carrossel
+    }
 }
 ```
-Define como cada idioma é exibido no seletor de idiomas.
-
-### 2. Interface de Busca
-Contém strings para o campo de busca, mensagens de erro e histórico de pesquisas:
-- Placeholders do campo de busca
-- Mensagens de erro e resultados
-- Gerenciamento do histórico
-
-### 3. Promoções e Descontos
-Textos para banners promocionais e ofertas:
-- Mensagens de desconto para novos usuários
-- Informações sobre cupons
-- Destaque de novos produtos
-
-### 4. Navegação e Categorias
-Termos para o sistema de navegação:
-- Cabeçalhos de departamentos
-- Botões de ação ("Ver todos", "Limpar")
-- Títulos de seções da loja
-
-### 5. Newsletter
-Formulário de inscrição para newsletter:
-- Campos de entrada (nome, email)
-- Textos de concordância com políticas
-- Botão de registro
-
-### 6. Rodapé Institucional
-Informações da empresa organizadas em subseções:
-- Links institucionais (Sobre Nós, Termos e Condições)
-- Central de ajuda (FAQ, Entregas, Trocas)
-- Atendimento ao cliente (Contato, Horários)
-- Textos legais
-
-## Características
-- Estrutura consistente entre os três idiomas
-- Suporte a formatação com placeholders "{0}"
-- Organização hierárquica para facilitar manutenção
-- Textos específicos adaptados culturalmente para cada idioma (ex: formatos de horário e moeda)
 
 ---
 
-**🔍 Versão Desktop:**
+## 🔍 Explicação
 
-![Campo de Busca Mobile](assets/example/page-layout-design-lang-Desktop.gif)
+- `produtos`: lista de objetos do tipo `Produto`.
+- `carouselContent`: contêiner onde os produtos são exibidos.
+- `indicatorsContainer`: elemento que contém os indicadores (bolinhas de navegação).
+- `prevBtn` e `nextBtn`: botões de navegação.
+- `currentPage`: controla a página/posição atual.
+- `itemsPerView`: quantidade de produtos exibidos por vez, depende do tamanho da tela.
+- `totalPages`: número total de páginas no carrossel.
+- `autoScrollInterval`: temporizador para auto rolagem.
 
----
+A função `constructor()` serve para inicializar o carrossel com os elementos HTML, definir a quantidade de itens por tela e calcular quantas páginas o carrossel terá, além de disparar a função `init()`.
 
-**📱 Versão Mobile:**
 
-![Campo de Busca Mobile](assets/example/page-layout-design-lang-Mobile.gif)
 
----
 
-### Resumo do código SelectLang.js:
+# 🌍 Sistema de Internacionalização - `Lang.ts` - `LanguageProvider.tsx`
 
-O **LanguageSelector** implementa um seletor de idiomas para a aplicação. Ele:
-1. Inicializa um seletor de idiomas nas versões desktop e mobile do site.
-2. Gerencia a preferência de idioma do usuário, armazenando-a no localStorage.
-3. Conecta-se ao sistema de tradução para atualizar textos da interface.
-4. Exibe opções de idioma com base na configuração de idiomas suportados.
+O projeto utiliza um Context Provider para gerenciar traduções:
 
-### Funcionalidade Detalhada:
-- **Inicialização Dinâmica**: Importa e integra-se com o TranslationManager.
-- **Criação de Interfaces**: Gera seletores para as versões desktop e mobile.
-- **Persistência de Preferências**: Salva a escolha do idioma no armazenamento local.
-- **Atualização em Tempo Real**: Atualiza todos os textos quando o idioma é alterado.
+O `LanguageProvider.tsx` gerencia o idioma da aplicação e fornece traduções com base no arquivo `Lang.json`.
 
----
+#### Principais recursos:
 
-### Resumo do código Lang.js:
+- Armazena o idioma selecionado no `localStorage`
+- Atualiza as traduções automaticamente ao mudar o idioma
+- Disponibiliza `language`, `translations` e `setLanguage` via contexto
 
-O **TranslationManager** gerencia o sistema de internacionalização da aplicação. Ele:
-1. Carrega arquivos de tradução a partir de um JSON.
-2. Aplica traduções aos elementos da interface conforme o idioma selecionado.
-3. Suporta formatação HTML, placeholders e traduções aninhadas.
-4. Persiste a preferência de idioma do usuário e disponibiliza métodos para alterá-la.
+#### Exemplo de uso:
 
-### Funcionalidade Detalhada:
-- **Carregamento de Traduções**: Obtém as traduções via fetch de um arquivo JSON.
-- **Tradução Dinâmica**: Aplica traduções a elementos com base em seletores e atributos.
-- **Formatos Avançados**: Suporta HTML, placeholders e hierarquias de chaves de tradução.
-- **Fallback Inteligente**: Utiliza o idioma padrão quando uma tradução não está disponível.
-- **Atualização Global**: Método para atualizar todos os textos traduzíveis da interface.
+```tsx
+const {language, translations, setLanguage} = useLanguage();
 
-Ambos os componentes trabalham em conjunto para proporcionar uma experiência multilíngue fluida, permitindo que os usuários alternem entre idiomas e mantenham sua preferência entre sessões.
+<button onClick={() => setLanguage('pt')}>Português</button>
+```
 
----
+## 🔧 Tecnologias Utilizadas
+
+- **React 19.1.0** com Hooks
+- **TypeScript** para tipagem estática
+- **SCSS** para estilização modular
+- **Vite** como bundler
+- **React Icons** para ícones
+- **ESLint** para linting de código
+
+## 📱 Responsividade
+
+O layout se adapta dinamicamente a diferentes tamanhos de tela:
+
+- **Desktop**: Layout completo com navegação horizontal
+- **Mobile**: Menu hambúrguer, carrossel com menos itens visíveis, e busca otimizada para toque
+
+## 🌍 Internacionalização
+
+O sistema de tradução suporta:
+
+- Troca dinâmica de idiomas sem recarregar a página
+- Persistência da preferência de idioma do usuário
+- Formatação de textos com placeholders
+- Estrutura hierárquica para organização das traduções
+
+## 📂 Configuração do Projeto
+
+```json
+{
+  "name": "challenge-avanti-e",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.1",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react-swc": "^3.9.0",
+    "eslint": "^9.25.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.0.0",
+    "sass": "^1.87.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.31.0",
+    "vite": "^6.3.3"
+  }
+}
+```
+
+## 🖥️ Execução do Projeto
+
+1. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+2. Execute o ambiente de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+
+3. Para build de produção:
+   ```bash
+   npm run build
+   ```
+
+## 👨‍💻 Conclusão
+
+Este projeto demonstra a implementação bem-sucedida de um layout e-commerce responsivo usando React e TypeScript. A
+aplicação fornece uma experiência de usuário fluida tanto em dispositivos desktop quanto móveis, com recursos avançados
+como pesquisa, carrossel de produtos e suporte a múltiplos idiomas.
 
 ## Autor
 
-[Kauan Vidigal] - Desenvolvedor Full Stack - Versão do Projeto: **HTML, CSS** e **JavaScript**
-
-
-
+[Kauan Vidigal] - Desenvolvedor Full Stack - Versão do Projeto: **React, TypeScript** e **Vite**
