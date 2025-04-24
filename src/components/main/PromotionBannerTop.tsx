@@ -1,7 +1,9 @@
 import './page-main-styles/promotion-banner-top.scss'
+import {useLanguage} from "../context/LanguageProvider.tsx";
 
 const PromotionBannerTop: React.FC = () => {
 
+    const { translations } = useLanguage();
 
 
     return (
@@ -18,14 +20,14 @@ const PromotionBannerTop: React.FC = () => {
                     className="mobile-promo-banner-image"
                 />
                 <div className="promo-banner-text">
-                    <p className="promo-banner-primary-text" data-translate="promoBannerFirstText">
-                        super <span className="promo-banner-span-text"
-                                    data-translate="promoBannerSecondText"> sale </span>
+                    <p className="promo-banner-primary-text">
+                        {translations.promoBannerFirstText} <span className="promo-banner-span-text"
+                                    >    {translations.promoBannerSecondText}  </span>
                     </p>
-                    <p className="promo-banner-secondary-text" data-translate="promoBannerThirdText">Itens selecionados
-                        com
-                        até</p>
-                    <p className="promo-banner-three-text" data-translate="promoBannerFourthText">50% off</p>
+                    <p className="promo-banner-secondary-text">
+                        {translations.promoBannerThirdText}
+                    </p>
+                    <p className="promo-banner-three-text">{translations.promoBannerFourthText}</p>
                 </div>
             </div>
         </section>
