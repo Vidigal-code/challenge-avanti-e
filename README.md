@@ -1,5 +1,28 @@
 # Projeto: Layout Responsivo com React e TypeScript
 
+## Ambientes e Estado do Menu
+
+Versão do Projeto: **React, TypeScript** e **Vite**
+
+- [✅ Menu com cor ativa ON](https://challenge-avanti-j9s8tm0g1-kauan-vidigals-projects.vercel.app)
+   - Visual fiel ao Figma.
+   - Este é o ambiente padrão sem sistema de tradução.
+   - A cor ativa do menu está funcionando corretamente.
+
+- [🌙 Menu com cor ativa OFF](https://challenge-avanti-lp9s0lf30-kauan-vidigals-projects.vercel.app/)
+   - Este é o ambiente padrão sem sistema de tradução.
+   - A cor ativa do menu **não está** aplicada.
+
+- [🌍 Com sistema de tradução | ✅ Menu com cor ativa ON](https://challenge-avanti-hpqlqyrhx-kauan-vidigals-projects.vercel.app)
+   - Tradução funcionando.
+   - Visual fiel ao Figma.
+   - Cor ativa do menu aplicada corretamente.
+
+- [🌍 Com sistema de tradução | 🌙 Menu com cor ativa OFF](https://challenge-avanti-cpeafi8z3-kauan-vidigals-projects.vercel.app)
+   - Este ambiente está totalmente fiel ao Figma.
+   - Sistema de tradução integrado.
+   - A cor ativa do menu **não está** aplicada.
+
 ## 📋 Visão Geral
 
 Este projeto implementa um layout responsivo de e-commerce usando **React**, **TypeScript** e **SCSS**. A aplicação
@@ -124,42 +147,42 @@ Gerencia toda a lógica da busca:
 
 ```typescript
 export class Carousel {
-    private produtos: Produto[];
-    private carouselContent: HTMLElement;
-    private indicatorsContainer: HTMLElement;
-    private prevBtn: HTMLElement;
-    private nextBtn: HTMLElement;
-    private containerSelector: string;
-    private currentPage: number;
-    private itemsPerView: number;
-    private totalPages: number;
-    private autoScrollInterval: number | null;
+   private produtos: Produto[];
+   private carouselContent: HTMLElement;
+   private indicatorsContainer: HTMLElement;
+   private prevBtn: HTMLElement;
+   private nextBtn: HTMLElement;
+   private containerSelector: string;
+   private currentPage: number;
+   private itemsPerView: number;
+   private totalPages: number;
+   private autoScrollInterval: number | null;
 
-    constructor(
-        produtos: Produto[],
-        carouselContentId: string,
-        indicatorsContainerId: string,
-        prevBtnId: string,
-        nextBtnId: string,
-        containerSelector: string
-    ) {
-        this.produtos = produtos;
+   constructor(
+           produtos: Produto[],
+           carouselContentId: string,
+           indicatorsContainerId: string,
+           prevBtnId: string,
+           nextBtnId: string,
+           containerSelector: string
+   ) {
+      this.produtos = produtos;
 
-        // Obtém os elementos HTML pelo ID
-        this.carouselContent = document.getElementById(carouselContentId) as HTMLElement;
-        this.indicatorsContainer = document.getElementById(indicatorsContainerId) as HTMLElement;
-        this.prevBtn = document.getElementById(prevBtnId) as HTMLElement;
-        this.nextBtn = document.getElementById(nextBtnId) as HTMLElement;
-        this.containerSelector = containerSelector;
+      // Obtém os elementos HTML pelo ID
+      this.carouselContent = document.getElementById(carouselContentId) as HTMLElement;
+      this.indicatorsContainer = document.getElementById(indicatorsContainerId) as HTMLElement;
+      this.prevBtn = document.getElementById(prevBtnId) as HTMLElement;
+      this.nextBtn = document.getElementById(nextBtnId) as HTMLElement;
+      this.containerSelector = containerSelector;
 
-        // Inicializa os valores
-        this.currentPage = 0;
-        this.itemsPerView = this.getItemsPerView(); // Define com base na largura da tela
-        this.totalPages = Math.ceil(this.produtos.length / this.itemsPerView);
-        this.autoScrollInterval = null;
+      // Inicializa os valores
+      this.currentPage = 0;
+      this.itemsPerView = this.getItemsPerView(); // Define com base na largura da tela
+      this.totalPages = Math.ceil(this.produtos.length / this.itemsPerView);
+      this.autoScrollInterval = null;
 
-        this.init(); // Inicia o carrossel
-    }
+      this.init(); // Inicia o carrossel
+   }
 }
 ```
 
@@ -230,35 +253,35 @@ O sistema de tradução suporta:
 
 ```json
 {
-  "name": "challenge-avanti-e",
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.4",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-icons": "^5.5.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.25.1",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react-swc": "^3.9.0",
-    "eslint": "^9.25.1",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.0.0",
-    "sass": "^1.87.0",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.31.0",
-    "vite": "^6.3.3"
-  }
+   "name": "challenge-avanti-e",
+   "version": "0.0.0",
+   "type": "module",
+   "scripts": {
+      "dev": "vite",
+      "build": "tsc -b && vite build",
+      "lint": "eslint .",
+      "preview": "vite preview"
+   },
+   "dependencies": {
+      "@tailwindcss/vite": "^4.1.4",
+      "react": "^19.1.0",
+      "react-dom": "^19.1.0",
+      "react-icons": "^5.5.0"
+   },
+   "devDependencies": {
+      "@eslint/js": "^9.25.1",
+      "@types/react": "^19.1.2",
+      "@types/react-dom": "^19.1.2",
+      "@vitejs/plugin-react-swc": "^3.9.0",
+      "eslint": "^9.25.1",
+      "eslint-plugin-react-hooks": "^5.2.0",
+      "eslint-plugin-react-refresh": "^0.4.20",
+      "globals": "^16.0.0",
+      "sass": "^1.87.0",
+      "typescript": "~5.8.3",
+      "typescript-eslint": "^8.31.0",
+      "vite": "^6.3.3"
+   }
 }
 ```
 
