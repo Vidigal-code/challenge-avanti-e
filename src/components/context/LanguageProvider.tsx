@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState, ReactNode } from
 import LangJSON from '../../assets/lang/Lang.json';
 import { Language } from '../../ts/Lang.ts'
 
-type Translations = typeof LangJSON['en'];
+type Translations = typeof LangJSON['pt'];  // add Starts in Portuguese main language
 
 interface LanguageContextType {
     language: Language;
@@ -15,7 +15,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [language, setLanguage] = useState<Language>(() => {
         const saved = localStorage.getItem('language') as Language;
-        return saved && LangJSON[saved] ? saved : 'en';
+        return saved && LangJSON[saved] ? saved : 'pt'; // Starts in Portuguese main language
     });
 
     const [translations, setTranslations] = useState<Translations>(LangJSON[language]);
