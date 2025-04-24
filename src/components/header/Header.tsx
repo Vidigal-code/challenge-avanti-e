@@ -97,6 +97,7 @@ const Header: React.FC = () => {
                         <i className="bi bi-cart cart-icon" id="cart-icon"></i>
                     </div>
 
+                    {/*
                     <div className="desktop-select-language">
                         <select
                             className="language-select"
@@ -112,7 +113,7 @@ const Header: React.FC = () => {
                                 </option>
                             ))}
                         </select>
-                    </div>
+                    </div> */}
 
 
                 </div>
@@ -284,7 +285,7 @@ const Header: React.FC = () => {
 
                 <div className="mobile-dropdown-wrapper">
 
-                    <div className="d-flex justify-content-center align-items-center mb-4">
+                    {/*   <div className="d-flex justify-content-center align-items-center mb-4">
                         <div className="mobile-select-language">
                             <select
                                 className="language-select"
@@ -301,7 +302,7 @@ const Header: React.FC = () => {
                                 ))}
                             </select>
                         </div>
-                    </div>
+                    </div> */}
 
 
                     <div className="mobile-main-category">
